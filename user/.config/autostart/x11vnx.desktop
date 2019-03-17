@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/user/git/linux_mining/x11vnc.sh
+Hidden=false
+X-GNOME-Autostart-enabled=true
+Name=x11vnc
+Comment=x11vnc server
