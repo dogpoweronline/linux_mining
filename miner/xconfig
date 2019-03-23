@@ -1,0 +1,3 @@
+#!/bin/sh
+#Allow the X server to start even if no connected display devices could be detected.
+nvidia-xconfig -a --cool-bits=28 --allow-empty-initial-configuration
