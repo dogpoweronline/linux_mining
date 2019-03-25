@@ -8,7 +8,7 @@ apt-get install -y openssh-server
 systemctl enable ssh
 
 #
-apt-get install -y mc tmux git x11vnc
+apt-get install -y mc tmux git x11vnc python3
 
 #openvpn
 #apt-get install -y openvpn
