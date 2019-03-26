@@ -1,18 +1,18 @@
 #!/bin/bash
 
 #
-apt-get update
+apt update
 
 #ssh
-apt-get install -y openssh-server
+apt install -y openssh-server
 systemctl enable ssh
 
 #
-apt-get install -y mc tmux git x11vnc python3
+apt install -y mc tmux git x11vnc python3
 
 #openvpn
-#apt-get install -y openvpn
-#systemctl enable openvpn
+apt install -y openvpn
+systemctl enable openvpn@client
 
 #nvidia driver
 apt install -y nvidia-driver-390
