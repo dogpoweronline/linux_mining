@@ -13,7 +13,7 @@ mem_max=2000MHz
 """
 gpu_list = [
 	{'fan': '65', 'gpu': '-200', 'mem': '1950'}, #gpu 0
-	{'fan': '65', 'gpu': '-200', 'mem': '1950'}, #gpu 1
+	#{'fan': '65', 'gpu': '-200', 'mem': '1950'}, #gpu 1
 	]
 """#"""
 
@@ -22,7 +22,7 @@ number_of_gpu = len(gpu_list)
 """#lower power-limits in 100W"""
 c=0
 for n in gpu_list:
-	call(['nvidia-smi', '-i', '%s' % (c), '-pl', '101',])
+	call(['nvidia-smi', '-i', '%s' % (c), '-pl', '99',])
 	c+=1
 #nvidia-smi
 """#"""
