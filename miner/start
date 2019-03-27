@@ -1,0 +1,6 @@
+#!/bin/bash
+
+/usr/bin/python3 /home/user/miner/overclock.py
+
+tmux new-session -d -s miner '/bin/bash /home/user/miner/eth'
+

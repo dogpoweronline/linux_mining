@@ -1,8 +1,9 @@
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
+#DISPLAY=:0
+
 # m h dom mon dow user	command
-#@reboot	root	/home/user/git/linux_mining/x11vnc.sh
-@reboot		root	sleep 15 && tmux new-session -d -s miner '/bin/bash /home/user/miner/my_start_miner.bash'
-@reboot		root	sleep 15 && /usr/bin/python3 /home/user/miner/overclock.py
+@reboot		root	sleep 30 && /home/user/miner/start > /dev/null
+#*/1 * * * *	root	/home/user/miner/start > /dev/null
 #
