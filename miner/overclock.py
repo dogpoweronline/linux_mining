@@ -12,7 +12,7 @@ mem_min=-2000MHz
 mem_max=2000MHz
 """
 gpu_list = [
-	{'fan': '68', 'gpu': '-200', 'mem': '1950'}, #gpu 0
+	{'fan': '70', 'gpu': '-200', 'mem': '1900'}, #gpu 0
 	#{'fan': '67', 'gpu': '-200', 'mem': '1950'}, #gpu 1
 	]
 """#"""
