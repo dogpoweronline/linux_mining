@@ -15,13 +15,13 @@ from subprocess import call
 
 gpu_list = [
     # gtx1060
-    {'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
+    {'pl': '99', 'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
     # gtx1050ti
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 0
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 1
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 2
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 3
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 4
+    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 0
+    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 1
+    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 2
+    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 3
+    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 4
 ]
 
 
@@ -29,8 +29,8 @@ number_of_gpu = len(gpu_list)
 
 # nvidia-smi lower power-limits in 100W
 c = 0
-for n in gpu_list:
-    call(['nvidia-smi', '-i', '%s' % (c), '-pl', '99'])
+for i in gpu_list:
+    call(['nvidia-smi', '-i', '%s' % (c), '-pl', i['pl']])
     c += 1
 
 
@@ -62,9 +62,10 @@ for i in gpu_list:
     # '[gpu:0]/GPUOverclockingState=1',
     # '[gpu:0]/GPU2DClockFreqs=350,550',
     # '[gpu:0]/GPU3DClockFreqs=500,800',
-    # fan control
+    # FAN CONTROL
     # 'GPUFanControlState=1',
     # 'GPUTargetFanSpeed=90',
+    # GPU
     # -200MHz 1200Mhz
     # 'GPUGraphicsClockOffset[3]=-200',
     # -2000MHz 2000Mhz
