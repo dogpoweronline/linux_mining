@@ -15,13 +15,13 @@ from subprocess import call
 
 gpu_list = [
     # gtx1060
-    {'pl': '99', 'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
+    # {'pl': '99', 'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
     # gtx1050ti
-    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 0
-    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 1
-    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 2
-    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 3
-    # {'pl': '85', 'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 4
+    {'pl': '85', 'fan': '70', 'gpu': '-200', 'mem': '1200'},  # gpu 0
+    {'pl': '75', 'fan': '67', 'gpu': '-200', 'mem': '1200'},  # gpu 1
+    {'pl': '75', 'fan': '67', 'gpu': '-200', 'mem': '1200'},  # gpu 2
+    {'pl': '75', 'fan': '67', 'gpu': '-200', 'mem': '1200'},  # gpu 3
+    {'pl': '75', 'fan': '67', 'gpu': '-200', 'mem': '1200'},  # gpu 4
 ]
 
 
@@ -43,6 +43,7 @@ print('Display env: %s, uid: %s' % (dict(os.environ)['DISPLAY'], os.getuid()))
 # call(['su', '-', 'user', '-c', 'DISPLAY=:0',])
 # call(['export', '"DISPLAY=:0"',])
 # nvidia-settings --query all
+# nvidia-settings -c :0 -q [gpu:0]/GPUGraphicsClockOffset[3]
 
 
 def nvidia_settings(arg):
@@ -70,15 +71,19 @@ for i in gpu_list:
     # 'GPUGraphicsClockOffset[3]=-200',
     # -2000MHz 2000Mhz
     # 'GPUMemoryTransferRateOffset[3]=1950',
-    #
+    # nvidia-settings -c :0 -q [gpu:0]/GPUGraphicsClockOffset[2]
     if 'fan' in i:
         nvidia_settings('[gpu:%s]/GPUFanControlState=1' % (c))
         nvidia_settings('[fan:%s]/GPUTargetFanSpeed=%s' % (c, i['fan']))
     #
     if 'gpu' in i:
+        nvidia_settings('[gpu:%s]/GPUGraphicsClockOffset[1]=%s' % (c, i['gpu']))
+        nvidia_settings('[gpu:%s]/GPUGraphicsClockOffset[2]=%s' % (c, i['gpu']))
         nvidia_settings('[gpu:%s]/GPUGraphicsClockOffset[3]=%s' % (c, i['gpu']))
     #
     if 'mem' in i:
+        nvidia_settings('[gpu:%s]/GPUMemoryTransferRateOffset[1]=%s' % (c, i['mem']))
+        nvidia_settings('[gpu:%s]/GPUMemoryTransferRateOffset[2]=%s' % (c, i['mem']))
         nvidia_settings('[gpu:%s]/GPUMemoryTransferRateOffset[3]=%s' % (c, i['mem']))
     #
     c += 1
