@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import sys
+# import sys
 import os
 from subprocess import call
 
@@ -15,28 +15,28 @@ from subprocess import call
 
 gpu_list = [
     # gtx1060
-    {'fan': '70', 'gpu': '-200', 'mem': '1900'}, #  gpu 0
+    {'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
     # gtx1050ti
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'}, #  gpu 0
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'}, #  gpu 1
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'}, #  gpu 2
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'}, #  gpu 3
-    # {'fan': '67', 'gpu': '-200', 'mem': '1950'}, #  gpu 4
+    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 0
+    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 1
+    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 2
+    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 3
+    # {'fan': '67', 'gpu': '-200', 'mem': '1950'},  # gpu 4
 ]
 
 
 number_of_gpu = len(gpu_list)
 
 # nvidia-smi lower power-limits in 100W
-c=0
+c = 0
 for n in gpu_list:
-    call(['nvidia-smi', '-i', '%s' % (c), '-pl', '99',])
-    c+=1
+    call(['nvidia-smi', '-i', '%s' % (c), '-pl', '99'])
+    c += 1
 
 
 # nvidia-settings overclocking
-os.environ['DISPLAY']=':0'
-os.setreuid(1000,1000)
+os.environ['DISPLAY'] = ':0'
+os.setreuid(1000, 1000)
 
 print('Display env: %s, uid: %s' % (dict(os.environ)['DISPLAY'], os.getuid()))
 
@@ -46,17 +46,18 @@ print('Display env: %s, uid: %s' % (dict(os.environ)['DISPLAY'], os.getuid()))
 
 
 def nvidia_settings(arg):
-	control_set = [
-		'nvidia-settings', 
-		'-c', 
-		':0', 
-		'-a', 
-		arg,
-	]
-	print(' '.join(control_set))
-	call(control_set)
+    control_set = [
+        'nvidia-settings',
+        '-c',
+        ':0',
+        '-a',
+        arg,
+    ]
+    print(' '.join(control_set))
+    call(control_set)
 
-c=0
+
+c = 0
 for i in gpu_list:
     # '[gpu:0]/GPUOverclockingState=1',
     # '[gpu:0]/GPU2DClockFreqs=350,550',
@@ -79,4 +80,4 @@ for i in gpu_list:
     if 'mem' in i:
         nvidia_settings('[gpu:%s]/GPUMemoryTransferRateOffset[3]=%s' % (c, i['mem']))
     #
-    c+=1
+    c += 1
