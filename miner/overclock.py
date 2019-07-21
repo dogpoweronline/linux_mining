@@ -7,8 +7,17 @@ from subprocess import call
 
 # settings
 # fan=x%
+#
 # gpu_min=-200MHz
 # gpu_max=1200Mhz
+#
+# gtx1050ti
+# nvidia-settings -c :0 -q [gpu:0]/GPUGraphicsClockOffset[3]
+# mem_min=-200MHz
+# mem_max=1200MHz
+#
+# gtx1060
+# nvidia-settings -c :0 -q [gpu:0]/GPUGraphicsClockOffset[3]
 # mem_min=-2000MHz
 # mem_max=2000MHz
 
@@ -27,7 +36,7 @@ gpu_list = [
 
 number_of_gpu = len(gpu_list)
 
-# nvidia-smi lower power-limits in 100W
+# nvidia-smi lower power-limits in XXXW
 c = 0
 for i in gpu_list:
     call(['nvidia-smi', '-i', '%s' % (c), '-pl', i['pl']])
