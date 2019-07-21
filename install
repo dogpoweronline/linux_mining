@@ -13,6 +13,3 @@ apt install -y mc tmux git x11vnc python3 net-tools
 #openvpn
 apt install -y openvpn
 systemctl enable openvpn@client
-
-#nvidia driver
-apt install -y nvidia-driver-390

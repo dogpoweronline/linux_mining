@@ -1,0 +1,5 @@
+#!/bin/bash
+
+lspci -k | grep -EA2 'VGA|3D'
+
+nvidia-smi
