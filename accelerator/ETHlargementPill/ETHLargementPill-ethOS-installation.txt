@@ -1,0 +1,5 @@
+cd /home/ethos/
+wget https://github.com/Virosa/ETHlargementPill/raw/master/OhGodAnETHlargementPill-r2
+chmod +x OhGodAnETHlargementPill-r2
+sed -i '1 a\sudo screen -dmS OhGodAnETHlargementPill-r2 /home/ethos/OhGodAnETHlargementPill-r2' /home/ethos/custom.sh
+screen -dmS OhGodAnETHlargementPill-r2 /home/ethos/OhGodAnETHlargementPill-r2
