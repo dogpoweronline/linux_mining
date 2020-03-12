@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tmux new-session -d -s drossel '/home/user/miner/accelerator/OhGodAnETHlargementPill/OhGodAnETHlargementPill'
