@@ -1,9 +1,9 @@
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-#DISPLAY=:0
+# DISPLAY=:0
 
 # m h dom mon dow user	command
 @reboot		root	sleep 30 && /home/user/miner/start > /dev/null
-#*/1 * * * *	root	/home/user/miner/start > /dev/null
+# */1 * * * *	root	/home/user/miner/start > /dev/null
 #

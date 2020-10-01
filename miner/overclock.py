@@ -41,7 +41,7 @@ number_of_gpu = len(gpu_list)
 # nvidia-smi lower power-limits in XXXW
 c = 0
 for i in gpu_list:
-    call(['nvidia-smi', '-i', '%s' % (c), '-pl', i['pl']])
+    call(['nvidia-smi', '-i', '{}'.format(c), '-pl', i['pl']])
     c += 1
 
 
@@ -49,7 +49,7 @@ for i in gpu_list:
 os.environ['DISPLAY'] = ':0'
 os.setreuid(1000, 1000)
 
-print('Display env: %s, uid: %s' % (dict(os.environ)['DISPLAY'], os.getuid()))
+print('Display env: {}, uid: {}'.format(dict(os.environ)['DISPLAY'], os.getuid()))
 
 # call(['su', '-', 'user', '-c', 'DISPLAY=:0',])
 # call(['export', '"DISPLAY=:0"',])

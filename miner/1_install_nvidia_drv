@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # nvidia driver
-apt install -y nvidia-driver-390
+# apt install -y nvidia-driver-390
+apt install -y nvidia-driver-450
 
 # don't forget reboot
