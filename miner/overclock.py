@@ -23,7 +23,7 @@ from subprocess import call
 
 
 gpu_list = [
-    # gtx1060
+    # gtx1060ti
     # {'pl': '99', 'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
     # gtx1050ti
     # {'pl': '75', 'fan': '75', 'gpu': '-200', 'mem': '1500'},  # gpu 0
@@ -33,7 +33,7 @@ gpu_list = [
     # {'pl': '75', 'fan': '75', 'gpu': '-200', 'mem': '1500'},  # gpu 4
     # gtx1080ti
     {'pl': '250', 'fan': '75', 'gpu': '-100', 'mem': '700'},  # gpu 0
-    # gtx1660ti
+    # gtx1660ti_super
     {'pl': '75', 'fan': '75', 'gpu': '-200', 'mem': '0'},  # gpu 1
     {'pl': '75', 'fan': '75', 'gpu': '-200', 'mem': '0'},  # gpu 2
 ]
