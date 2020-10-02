@@ -34,8 +34,8 @@ gpu_list = [
     # gtx1080ti
     {'pl': '250', 'fan': '75', 'gpu': '-100', 'mem': '700'},  # gpu 0
     # gtx1660ti_super
-    {'pl': '75', 'fan': '75', 'gpu': '-200', 'mem': '300'},  # gpu 1
-    {'pl': '75', 'fan': '75', 'gpu': '-200', 'mem': '300'},  # gpu 2
+    {'pl': '250', 'fan': '75', 'gpu': '-100', 'mem': '700'},  # gpu 1
+    {'pl': '250', 'fan': '75', 'gpu': '-100', 'mem': '700'},  # gpu 2
 ]
 
 
@@ -101,3 +101,35 @@ for i in gpu_list:
         nvidia_settings('[gpu:%s]/GPUMemoryTransferRateOffset[3]=%s' % (c, i['mem']))
     #
     c += 1
+
+"""
+nvidia-settings -c :0 -a [gpu:0]/GPUFanControlState=1
+nvidia-settings -c :0 -a [fan:0]/GPUTargetFanSpeed=75
+nvidia-settings -c :0 -a [gpu:0]/GPUGraphicsClockOffset[1]=-100
+nvidia-settings -c :0 -a [gpu:0]/GPUGraphicsClockOffset[2]=-100
+nvidia-settings -c :0 -a [gpu:0]/GPUGraphicsClockOffset[3]=-100
+nvidia-settings -c :0 -a [gpu:0]/GPUMemoryTransferRateOffset[1]=700
+nvidia-settings -c :0 -a [gpu:0]/GPUMemoryTransferRateOffset[2]=700
+nvidia-settings -c :0 -a [gpu:0]/GPUMemoryTransferRateOffset[3]=700
+
+nvidia-settings -c :0 -a [gpu:1]/GPUFanControlState=1
+nvidia-settings -c :0 -a [fan:1]/GPUTargetFanSpeed=75
+nvidia-settings -c :0 -a [gpu:1]/GPUGraphicsClockOffset[1]=-200
+nvidia-settings -c :0 -a [gpu:1]/GPUGraphicsClockOffset[2]=-200
+nvidia-settings -c :0 -a [gpu:1]/GPUGraphicsClockOffset[3]=-200
+nvidia-settings -c :0 -a [gpu:1]/GPUMemoryTransferRateOffset[1]=300
+nvidia-settings -c :0 -a [gpu:1]/GPUMemoryTransferRateOffset[2]=300
+nvidia-settings -c :0 -a [gpu:1]/GPUMemoryTransferRateOffset[3]=300
+
+nvidia-settings -c :0 -a [gpu:2]/GPUFanControlState=1
+nvidia-settings -c :0 -a [fan:2]/GPUTargetFanSpeed=75
+nvidia-settings -c :0 -a [gpu:2]/GPUGraphicsClockOffset[1]=-200
+nvidia-settings -c :0 -a [gpu:2]/GPUGraphicsClockOffset[2]=-200
+nvidia-settings -c :0 -a [gpu:2]/GPUGraphicsClockOffset[3]=-200
+nvidia-settings -c :0 -a [gpu:2]/GPUMemoryTransferRateOffset[1]=300
+nvidia-settings -c :0 -a [gpu:2]/GPUMemoryTransferRateOffset[2]=300
+nvidia-settings -c :0 -a [gpu:2]/GPUMemoryTransferRateOffset[3]=300
+
+nvidia-settings -c :0 -q [gpu:1]/GPUGraphicsClockOffset[3]
+nvidia-settings -c :0 -q [gpu:1]/GPUMemoryTransferRateOffset[3]
+"""
