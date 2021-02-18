@@ -22,6 +22,9 @@ from subprocess import call
 # mem_max=2000MHz
 
 
+user_uid = 10000  # user
+user_uid = 29999  # oem
+
 gpu_list = [
     # gtx1060ti
     # {'pl': '99', 'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
@@ -50,9 +53,9 @@ for i in gpu_list:
 
 # nvidia-settings overclocking
 os.environ['DISPLAY'] = ':0'
-os.setreuid(1000, 1000)
+os.setreuid(user_uid, user_uid)
 
-print('Display env: {}, uid: {}'.format(dict(os.environ)['DISPLAY'], os.getuid()))
+print('Display env: {}, uid: {}'.format(dict(os.environ)['DISPLAY'], os.getuid()))  # noqa
 
 # call(['su', '-', 'user', '-c', 'DISPLAY=:0',])
 # call(['export', '"DISPLAY=:0"',])
