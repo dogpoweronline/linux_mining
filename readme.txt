@@ -5,3 +5,6 @@
 # http://onubuntu.blogspot.com/2013/03/gigabyte-ga-970a-ds3-and-ubuntu.html
 # if you want to install Ubuntu, enable IOMMU support in the UEFI BIOS
 # during Ubuntu installation remove all USB device
+
+# Ubuntu 20.04.2 LTS -> install OEM
+# User usb 3.0 with keyboard and Flash
