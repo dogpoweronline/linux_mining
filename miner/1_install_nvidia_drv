@@ -2,6 +2,6 @@
 
 # nvidia driver
 # apt install -y nvidia-driver-390
-apt install -y nvidia-driver-450
+apt install -y nvidia-driver-460
 
 # don't forget reboot
