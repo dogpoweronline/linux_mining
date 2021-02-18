@@ -6,5 +6,5 @@
 # if you want to install Ubuntu, enable IOMMU support in the UEFI BIOS
 # during Ubuntu installation remove all USB device
 
-# Ubuntu 20.04.2 LTS -> install OEM
-# User usb 3.0 with keyboard and Flash
+# Xubuntu 20.04.2 LTS -> install OEM
+# Use USB 3.0 ports with keyboard and Flash
