@@ -3,5 +3,6 @@
 # nvidia driver
 # apt install -y nvidia-driver-390
 apt install -y nvidia-driver-460
+apt install -y nvidia-cuda-toolkit
 
 # don't forget reboot
