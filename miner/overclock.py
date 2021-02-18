@@ -27,7 +27,7 @@ user_uid = 29999  # oem
 
 gpu_list = [
     # gtx1060ti
-    {'pl': '99', 'fan': '70', 'gpu': '-200', 'mem': '1900'},  # gpu 0
+    {'pl': '99', 'fan': '70', 'gpu': '0', 'mem': '1999'},  # gpu 0
 
     # gtx1050ti
     # {'pl': '75', 'fan': '75', 'gpu': '-200', 'mem': '1500'},  # gpu 0
