@@ -21,7 +21,7 @@ from subprocess import call
 # mem_min=-2000MHz
 # mem_max=2000MHz
 
-
+# see: /etc/passwd
 user_uid = 10000  # user
 user_uid = 29999  # oem
 
@@ -74,7 +74,7 @@ def nvidia_settings(arg):
         '-a',
         arg,
     ]
-    print(' '.join(control_set))
+    print(' '.join(control_set))  # noqa
     call(control_set)
 
 

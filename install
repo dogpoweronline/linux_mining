@@ -8,6 +8,8 @@ systemctl enable ssh
 
 apt install -y mc tmux git x11vnc python3 net-tools
 
+systemctl disable rsyslog.service
+
 # openvpn
 # apt install -y openvpn
 # systemctl enable openvpn@client
