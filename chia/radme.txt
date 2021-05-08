@@ -7,5 +7,7 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
 
 [ec2-user ~]$ blkid
 
-/dev/xvdb: UUID="5ce6c2b3-a3b8-4935-8c53-f09a84b2b0b7" TYPE="xfs"
-/dev/nvme0n1: UUID="92924cc0-57bc-4c86-86cd-13592b46452a" TYPE="xfs"
+UUID=5ce6c2b3-a3b8-4935-8c53-f09a84b2b0b7  /home/disc/xch_cold  xfs  defaults,nofail  0  2
+UUID=92924cc0-57bc-4c86-86cd-13592b46452a  /home/disc/xch_hot  xfs  defaults,nofail  0  2
+
+chia plots create -k 32 -n 2 -t /home/disc/xch_hot -2 /home/disc/xch_hot -d /home/disc/xch_cold
