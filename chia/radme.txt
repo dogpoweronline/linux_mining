@@ -3,7 +3,7 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
 [ec2-user ~]$ lsblk
 
 [ec2-user ~]$ mkfs -t xfs /dev/nvme0n1
-[ec2-user ~]$ mkfs -t xfs /dev/sdb
+[ec2-user ~]$ mkfs -t xfs /dev/xvdb
 
 [ec2-user ~]$ blkid
 
