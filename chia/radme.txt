@@ -1,0 +1,11 @@
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
+
+[ec2-user ~]$ lsblk
+
+[ec2-user ~]$ mkfs -t xfs /dev/nvme0n1
+[ec2-user ~]$ mkfs -t xfs /dev/sdb
+
+[ec2-user ~]$ blkid
+
+/dev/xvdb: UUID="5ce6c2b3-a3b8-4935-8c53-f09a84b2b0b7" TYPE="xfs"
+/dev/nvme0n1: UUID="92924cc0-57bc-4c86-86cd-13592b46452a" TYPE="xfs"
