@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir /home/disc/xch_cold
-mkdir /home/disc/xch_hot
-mkdir /home/disc/chia
+mkdir /home/chia
+mkdir /home/chia/xch_hot
+mkdir /home/chia/xch_cold_1
