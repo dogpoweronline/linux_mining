@@ -12,16 +12,5 @@ blkid
 UUID=99791068-7232-49c8-8945-6a65845f0567  /home/chia/xch_hot  xfs  defaults,nofail  0  2
 UUID=78783716-ac16-4364-ade8-a50f9f6e1791  /home/chia/xch_cold_1  xfs  defaults,nofail  0  2
 
-chia plots create -k 32 -n 1 -b 4000 -r 12 -u 128 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1
-
-real    414m26,931s
-user    432m35,444s
-sys     16m48,852s
-
-
-chia plots create -k 32 -n 1 -b 8000 -r 12 -u 64 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1
-Time for phase 1 = 8145.476 seconds. CPU (198.240%)
-
-
 # Not synced or not connected to peers chia
 # ~/.chia/mainnet/db/peer_table_node.sqlite
