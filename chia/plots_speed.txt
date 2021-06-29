@@ -46,3 +46,29 @@ chia plots create -k 32 -n 1 -b 8000 -r 12 -u 32 -t /home/chia/xch_hot -2 /home/
 # Proofs 30 / 30, 1.0
 
 chia plots create -k 32 -n 1 -b 8000 -r 12 -u 64 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1 > /home/chia/10.log
+# Time for phase 1 = 7309.115 seconds. CPU (220.090%)
+# Time for phase 2 = 4287.540 seconds. CPU (85.410%)
+# Time for phase 3 = 8453.112 seconds. CPU (83.170%)
+# Time for phase 4 = 456.356 seconds. CPU (95.630%)
+# 5.69
+# 29/30
+
+# 1.1.7.dev
+chia plots create -k 32 -n 1 -b 12000 -r 12 -u 64 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1 > /home/chia/11.log
+# Time for phase 1 = 8120.446 seconds. CPU (204.140%)
+# Time for phase 2 = 4255.465 seconds. CPU (83.460%)
+# Time for phase 3 = 8800.391 seconds. CPU (76.310%)
+# Time for phase 4 = 489.583 seconds. CPU (88.650%)
+# 6.0
+# 28/30
+
+
+chia plots create -k 32 -n 2 -b 4000 -r 12 -u 128 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1 > /home/chia/12_a.log
+chia plots create -k 32 -n 2 -b 4000 -r 12 -u 128 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1 > /home/chia/13_b.log
+
+
+chia plots create -k 32 -n 2 -b 4000 -r 12 -u 128 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1 > /home/chia/14_a.log
+sleep 9000 && chia plots create -k 32 -n 2 -b 4000 -r 12 -u 128 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_1 > /home/chia/14_b.log
+
+
+chia plots check -g 54016a4030ed805d50ad11b088c27286f6028a2204f2fc817351c38183e1a7e5

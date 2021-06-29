@@ -24,6 +24,7 @@ from subprocess import call
 # see: /etc/passwd
 user_uid = 10000  # user
 user_uid = 29999  # oem
+user_uid = 1000  # user
 
 gpu_list = [
     # gtx1060ti
