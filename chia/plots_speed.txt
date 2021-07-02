@@ -72,3 +72,6 @@ sleep 9000 && chia plots create -k 32 -n 2 -b 4000 -r 12 -u 128 -t /home/chia/xc
 
 
 chia plots check -g 54016a4030ed805d50ad11b088c27286f6028a2204f2fc817351c38183e1a7e5
+
+
+chia plots create -c xch1awc3mww3ek5mpdxy98qnpfkk20464xvryq47fw352lcxekxmyzys2a5m3m -k 32 -n 3 -b 7000 -r 12 -u 64 -t /home/chia/xch_hot -2 /home/chia/xch_hot -d /home/chia/xch_cold_2/pool > /home/chia/31_a.log

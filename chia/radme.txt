@@ -14,3 +14,5 @@ UUID=78783716-ac16-4364-ade8-a50f9f6e1791  /home/chia/xch_cold_1  xfs  defaults,
 
 # Not synced or not connected to peers chia
 # ~/.chia/mainnet/db/peer_table_node.sqlite
+
+mount -t ntfs -o nls=utf8,umask=0222 /dev/sdc2 /home/chia/xch_cold_2
